@@ -1,0 +1,33 @@
+
+Paquetes usados
+- bloc , flutter_bloc: para gestionar el estado
+- equatable: nos permite comparar si 2 objetos son iguales. https://pub.dev/packages/equatable
+- geolocator: debemos configurarlo para android y para io. Ver readme : https://pub.dev/packages/geolocator
+- permissionHandler:  es el manejador de permisos. (para acceder al gps, a los contactos, a la camara, etc...)
+
+Estructura del directorio
+
+lib:
+    - Blocs: 
+    - Helpers: son funciones que centralizamos en esta carpeta.
+    - Models: modelos es una forma abstracta de ver un objeto
+    - Screens: todas las pantallas de la app
+    - Views:
+    - Services: encargados de realizar peticiones HTTP
+    - theme : el tema del mapa
+    - ui: widget personalizados , mensajes etc. 
+    - widgets: 
+
+Si tenemso una app grande con muchos modulos, es mejor crear unaa carpeta por cada modulo (eje productos, clientes, mapas) y en cada uno de
+estos modulos crear las carpeta mencionadas arriba.
+
+La primer pantalla es gps_access_screen y nos va a servir para saber si el usuario tiene el gps encencido o no, y de tenerlo encencido nos
+pedira que le cedamos permiso. Esto quiere decir que de acuerdo al estado del gps la pantalla va a mostrar una cosa u otra. Como vemos
+necesitamos manejar el estado. Lo haremos a traves de blob.
+
+Agregamos la extension de Bloc asi es mas facil crear un bloc. Solo click derecho crear blob le ponemos un nombre y crea los 3 archivos del bloc
+(state,event y bloc). Tambien me agrega el equatable.
+
+Todas las importaciones las centralizamos en un unico archivo para cada carpeta con el mismo nombre que la respectiva carpeta.
+
+
